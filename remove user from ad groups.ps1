@@ -53,7 +53,7 @@ Try {
 
         ForEach ($group in $UserGroups){
 
-            Remove-ADGroupMember -Identity $group -Members $Users -Credential $creds -PassThru
+            Remove-ADGroupMember -Identity $group -Members $Users -Credential $creds -confirm:$false
             Write-Host "Removing " -NoNewline 
             Write-host $users.Name -NoNewline -ForegroundColor DarkCyan
             Write-Host " from " -NoNewline
